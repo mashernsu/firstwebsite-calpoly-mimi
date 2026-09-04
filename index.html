@@ -1,1933 +1,1541 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aura Health & Chiropractic | Whole-Body Alignment & Vitality</title>
-  
-  <!-- One Google Font -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Kinetic Chiropractic | Sports Performance and Spine Clinic</title>
+  <!-- Single Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* CSS Reset & Variables */
-    *, *::before, *::after {
+    :root {
+      --maroon: #7A1C28;
+      --maroon-dark: #5C131D;
+      --maroon-light: #9B2837;
+      --maroon-tint: #FDF2F3;
+      --maroon-border: #E8B4BB;
+      --dark-slate: #0F172A;
+      --navy-gray: #1E293B;
+      --muted-slate: #475569;
+      --light-slate: #64748B;
+      --bg-light: #F8FAFC;
+      --bg-white: #FFFFFF;
+      --border-subtle: #E2E8F0;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
+      --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 10px 25px rgba(15, 23, 42, 0.12);
+      --transition: all 0.2s ease-in-out;
+    }
+
+    * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    :root {
-      --primary: #143827;
-      --primary-light: #20543c;
-      --accent: #2e8b57;
-      --accent-tint: #eaf4ed;
-      --gold: #bfa15f;
-      --gold-soft: #fcf8ee;
-      --bg: #fafbf8;
-      --surface: #ffffff;
-      --surface-alt: #f3f6f2;
-      --text: #1b2620;
-      --text-muted: #57695f;
-      --text-light: #8fa096;
-      --border: #e0eae3;
-      --shadow-sm: 0 4px 12px rgba(20, 56, 39, 0.04);
-      --shadow-md: 0 10px 30px rgba(20, 56, 39, 0.08);
-      --shadow-lg: 0 20px 45px rgba(20, 56, 39, 0.12);
-      --radius-sm: 8px;
-      --radius-md: 16px;
-      --radius-lg: 24px;
-      --radius-pill: 9999px;
-      --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
     html {
       scroll-behavior: smooth;
-      font-size: 16px;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--dark-slate);
+      background-color: var(--bg-light);
+      line-height: 1.6;
     }
 
     body {
-      font-family: var(--font-main);
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
       overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Typography & Utilities */
+    h1, h2, h3, h4 {
+      color: var(--dark-slate);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    p {
+      color: var(--muted-slate);
+      font-size: 1rem;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
       transition: var(--transition);
-    }
-
-    button, input, select, textarea {
-      font-family: inherit;
     }
 
     .container {
       width: 100%;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
 
-    /* Typography Utilities */
-    .eyebrow {
+    .badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 0.825rem;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--accent);
-      background-color: var(--accent-tint);
-      padding: 0.35rem 0.9rem;
-      border-radius: var(--radius-pill);
-      margin-bottom: 1rem;
+      letter-spacing: 0.06em;
+      border-radius: var(--radius-full);
+      background-color: var(--maroon-tint);
+      color: var(--maroon);
+      border: 1px solid var(--maroon-border);
+      margin-bottom: 0.85rem;
     }
 
-    .section-title {
-      font-size: clamp(2rem, 3.5vw, 2.75rem);
-      font-weight: 800;
-      color: var(--primary);
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-    }
-
-    .section-subtitle {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 650px;
-      margin-bottom: 3rem;
-    }
-
-    .text-center {
-      text-align: center;
-    }
-
-    .center-block {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.6rem;
-      padding: 0.85rem 1.75rem;
-      font-size: 0.95rem;
       font-weight: 600;
-      border-radius: var(--radius-pill);
+      font-size: 0.95rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: var(--radius-md);
       cursor: pointer;
-      border: 1px solid transparent;
+      border: none;
       transition: var(--transition);
-      white-space: nowrap;
+      text-align: center;
     }
 
     .btn-primary {
-      background-color: var(--primary);
-      color: #ffffff;
-      box-shadow: 0 4px 14px rgba(20, 56, 39, 0.25);
+      background-color: var(--maroon);
+      color: var(--bg-white);
+      box-shadow: 0 4px 14px rgba(122, 28, 40, 0.3);
     }
 
     .btn-primary:hover {
-      background-color: var(--primary-light);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(20, 56, 39, 0.3);
-    }
-
-    .btn-secondary {
-      background-color: var(--surface);
-      color: var(--primary);
-      border-color: var(--border);
-    }
-
-    .btn-secondary:hover {
-      background-color: var(--surface-alt);
-      border-color: var(--primary-light);
+      background-color: var(--maroon-dark);
       transform: translateY(-2px);
     }
 
-    .btn-accent {
-      background-color: var(--accent);
-      color: #ffffff;
+    .btn-outline {
+      background-color: transparent;
+      color: var(--maroon);
+      border: 2px solid var(--maroon);
     }
 
-    .btn-accent:hover {
-      background-color: #247348;
-      transform: translateY(-2px);
+    .btn-outline:hover {
+      background-color: var(--maroon-tint);
     }
 
-    /* Header & Navigation */
-    .header {
+    .section-title-wrap {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3rem auto;
+    }
+
+    .section-title-wrap h2 {
+      font-size: 2.25rem;
+      margin-bottom: 0.85rem;
+      letter-spacing: -0.02em;
+    }
+
+    /* Top Announcement Bar */
+    .top-bar {
+      background-color: var(--dark-slate);
+      color: #94A3B8;
+      font-size: 0.8rem;
+      padding: 0.5rem 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .top-bar span {
+      color: var(--bg-white);
+      font-weight: 600;
+    }
+
+    /* Navigation */
+    header {
       position: sticky;
       top: 0;
+      background-color: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-subtle);
       z-index: 1000;
-      background: rgba(250, 251, 248, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      transition: var(--transition);
     }
 
-    .nav-container {
+    .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 80px;
+      height: 74px;
     }
 
-    .brand-logo {
+    .logo {
       display: flex;
       align-items: center;
       gap: 0.75rem;
       font-weight: 800;
-      font-size: 1.35rem;
-      color: var(--primary);
-      letter-spacing: -0.03em;
+      font-size: 1.25rem;
+      color: var(--dark-slate);
+      letter-spacing: -0.02em;
     }
 
-    .brand-logo svg {
-      width: 32px;
-      height: 32px;
-      fill: none;
-      stroke: var(--accent);
-      stroke-width: 2.2;
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+      color: var(--bg-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      font-size: 1.1rem;
+      font-weight: 800;
     }
 
     .nav-links {
       display: flex;
-      align-items: center;
-      gap: 2.2rem;
       list-style: none;
+      align-items: center;
+      gap: 2rem;
     }
 
     .nav-links a {
       font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-muted);
+      font-weight: 600;
+      color: var(--muted-slate);
     }
 
     .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+      color: var(--maroon);
     }
 
     .mobile-menu-btn {
       display: none;
       background: none;
       border: none;
-      color: var(--primary);
+      font-size: 1.5rem;
+      color: var(--dark-slate);
       cursor: pointer;
-      padding: 0.5rem;
     }
 
     /* Hero Section */
     .hero {
+      padding: 5rem 0 4rem 0;
+      background: radial-gradient(circle at top right, #FFF5F6 0%, var(--bg-light) 65%);
       position: relative;
-      padding: 5rem 0 6rem;
-      overflow: hidden;
-    }
-
-    .hero-bg-accent {
-      position: absolute;
-      top: -150px;
-      right: -100px;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(46, 139, 87, 0.12) 0%, rgba(250, 251, 248, 0) 70%);
-      border-radius: 50%;
-      z-index: -1;
-      pointer-events: none;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 4rem;
+      gap: 3.5rem;
       align-items: center;
     }
 
-    .hero-content h1 {
-      font-size: clamp(2.6rem, 4.5vw, 3.75rem);
-      line-height: 1.12;
-      font-weight: 800;
-      color: var(--primary);
+    .hero-text h1 {
+      font-size: 3.25rem;
       letter-spacing: -0.03em;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.15;
     }
 
-    .hero-content h1 span {
-      color: var(--accent);
-      position: relative;
+    .hero-text h1 span {
+      color: var(--maroon);
     }
 
-    .hero-lead {
-      font-size: 1.2rem;
-      color: var(--text-muted);
-      line-height: 1.65;
-      margin-bottom: 2.2rem;
-      max-width: 540px;
+    .hero-text p {
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+      color: var(--muted-slate);
     }
 
-    .hero-ctas {
+    .hero-actions {
       display: flex;
-      align-items: center;
       gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 2.75rem;
-    }
-
-    .hero-proof {
-      display: flex;
       align-items: center;
-      gap: 2.5rem;
-      border-top: 1px solid var(--border);
-      padding-top: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
     }
 
-    .proof-item {
-      display: flex;
-      flex-direction: column;
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
     }
 
-    .proof-number {
-      font-size: 1.65rem;
+    .stat-item strong {
+      display: block;
+      font-size: 1.75rem;
+      color: var(--maroon);
       font-weight: 800;
-      color: var(--primary);
-      letter-spacing: -0.02em;
     }
 
-    .proof-label {
-      font-size: 0.85rem;
-      color: var(--text-muted);
+    .stat-item span {
+      font-size: 0.825rem;
+      color: var(--light-slate);
       font-weight: 500;
     }
 
-    /* Hero Visual Card */
     .hero-card {
-      position: relative;
-      background: var(--surface);
+      background: var(--bg-white);
       border-radius: var(--radius-lg);
-      padding: 2.5rem;
+      padding: 2rem;
       box-shadow: var(--shadow-lg);
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-subtle);
+      position: relative;
     }
 
-    .spine-graphic-wrapper {
-      background: var(--surface-alt);
-      border-radius: var(--radius-md);
-      padding: 2.5rem 1.5rem;
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .hero-card-header h3 {
+      font-size: 1.1rem;
+    }
+
+    .live-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: #15803D;
+      font-weight: 600;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #22C55E;
+      border-radius: 50%;
+    }
+
+    .focus-list {
+      list-style: none;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
+      gap: 1rem;
     }
 
-    .pulse-dot {
-      width: 12px;
-      height: 12px;
-      background-color: var(--accent);
-      border-radius: 50%;
-      position: absolute;
-      box-shadow: 0 0 0 6px rgba(46, 139, 87, 0.25);
-      animation: pulse 2.2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(46, 139, 87, 0.4); }
-      70% { box-shadow: 0 0 0 14px rgba(46, 139, 87, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(46, 139, 87, 0); }
-    }
-
-    .floating-badge {
-      position: absolute;
-      background: var(--surface);
-      padding: 0.85rem 1.25rem;
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border);
+    .focus-item {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 0.85rem;
-      z-index: 2;
+      font-size: 0.925rem;
     }
 
-    .badge-bottom-left {
-      bottom: -15px;
-      left: -20px;
-    }
-
-    .badge-top-right {
-      top: 15px;
-      right: -20px;
-    }
-
-    .badge-icon-box {
-      width: 40px;
-      height: 40px;
-      border-radius: var(--radius-sm);
-      background: var(--accent-tint);
+    .focus-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: var(--maroon-tint);
+      color: var(--maroon);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent);
-    }
-
-    .badge-text {
-      display: flex;
-      flex-direction: column;
-      font-size: 0.85rem;
-    }
-
-    .badge-text strong {
-      color: var(--primary);
+      font-size: 0.8rem;
       font-weight: 700;
+      flex-shrink: 0;
     }
 
-    .badge-text span {
-      color: var(--text-muted);
-      font-size: 0.75rem;
-    }
-
-    /* Interactive Symptom Explorer Section */
-    .explorer-section {
+    /* Why Us Section */
+    .why-us {
       padding: 5rem 0;
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      background-color: var(--bg-white);
     }
 
-    .explorer-layout {
+    .features-grid {
       display: grid;
-      grid-template-columns: 1fr 1.3fr;
-      gap: 3rem;
-      margin-top: 2.5rem;
-      background: var(--bg);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      border: 1px solid var(--border);
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.75rem;
     }
 
-    .segment-picker {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .segment-btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.15rem 1.4rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
+    .feature-box {
+      background-color: var(--bg-light);
+      padding: 2rem;
       border-radius: var(--radius-md);
-      cursor: pointer;
-      text-align: left;
+      border: 1px solid var(--border-subtle);
       transition: var(--transition);
     }
 
-    .segment-btn:hover {
-      border-color: var(--accent);
-      transform: translateX(4px);
-    }
-
-    .segment-btn.active {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: #ffffff;
+    .feature-box:hover {
+      border-color: var(--maroon-border);
       box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
     }
 
-    .segment-btn.active .seg-subtitle {
-      color: rgba(255, 255, 255, 0.75);
+    .feature-number {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--maroon);
+      margin-bottom: 0.75rem;
     }
 
-    .segment-btn.active svg {
-      stroke: #ffffff;
-      transform: translateX(3px);
+    .feature-box h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
     }
 
-    .seg-title {
-      font-weight: 700;
-      font-size: 1rem;
-      margin-bottom: 0.15rem;
+    .feature-box p {
+      font-size: 0.925rem;
+      line-height: 1.55;
     }
 
-    .seg-subtitle {
-      font-size: 0.825rem;
-      color: var(--text-muted);
+    /* Treatments Section with Tabs */
+    .treatments {
+      padding: 5rem 0;
+      background-color: var(--bg-light);
     }
 
-    .explorer-details {
-      background: var(--surface);
-      padding: 2.25rem;
+    .tab-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: var(--bg-white);
+      border: 1px solid var(--border-subtle);
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--muted-slate);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .tab-btn:hover {
+      color: var(--maroon);
+      border-color: var(--maroon-border);
+    }
+
+    .tab-btn.active {
+      background: var(--maroon);
+      color: var(--bg-white);
+      border-color: var(--maroon);
+      box-shadow: 0 4px 10px rgba(122, 28, 40, 0.25);
+    }
+
+    .treatments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .treatment-card {
+      background: var(--bg-white);
       border-radius: var(--radius-md);
-      border: 1px solid var(--border);
+      padding: 2rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: var(--transition);
     }
 
-    .details-tag {
-      display: inline-block;
+    .treatment-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--maroon-border);
+    }
+
+    .treatment-tag {
       font-size: 0.75rem;
       font-weight: 700;
-      color: var(--gold);
-      background: var(--gold-soft);
-      padding: 0.25rem 0.75rem;
-      border-radius: var(--radius-pill);
+      color: var(--maroon);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .treatment-card h3 {
+      font-size: 1.25rem;
       margin-bottom: 0.75rem;
+    }
+
+    .treatment-card p {
+      font-size: 0.925rem;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .treatment-meta {
+      background-color: var(--bg-light);
+      padding: 0.85rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.825rem;
+      color: var(--muted-slate);
+      border-left: 3px solid var(--maroon);
+    }
+
+    /* Pricing Section */
+    .pricing {
+      padding: 5rem 0;
+      background-color: var(--bg-white);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .price-card {
+      background: var(--bg-light);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 1.75rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+    }
+
+    .price-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .price-card.featured {
+      background: #FFFBFB;
+      border: 2px solid var(--maroon);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .popular-flag {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--maroon);
+      color: var(--bg-white);
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.8rem;
+      border-radius: var(--radius-full);
+    }
+
+    .price-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .price-target {
+      font-size: 0.825rem;
+      color: var(--light-slate);
+      margin-bottom: 1.25rem;
+    }
+
+    .price-amount {
+      display: flex;
+      align-items: baseline;
+      gap: 0.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .price-amount .currency {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--dark-slate);
+    }
+
+    .price-amount .val {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--dark-slate);
+      line-height: 1;
+    }
+
+    .price-amount .unit {
+      color: var(--light-slate);
+      font-size: 0.85rem;
+    }
+
+    .price-perks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      flex-grow: 1;
+    }
+
+    .price-perks li {
+      font-size: 0.875rem;
+      color: var(--muted-slate);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .price-perks li span.bullet {
+      color: var(--maroon);
+      font-weight: bold;
+    }
+
+    .pricing-guarantee {
+      background-color: var(--maroon-tint);
+      border: 1px solid var(--maroon-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .guarantee-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--maroon);
+      color: var(--bg-white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .guarantee-text h4 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      color: var(--maroon-dark);
+    }
+
+    .guarantee-text p {
+      font-size: 0.85rem;
+      color: var(--muted-slate);
+      margin: 0;
+    }
+
+    /* Athlete Demographic Callout */
+    .demographics {
+      padding: 4.5rem 0;
+      background: linear-gradient(180deg, var(--navy-gray) 0%, var(--dark-slate) 100%);
+      color: var(--bg-white);
+    }
+
+    .demographics .section-title-wrap h2 {
+      color: var(--bg-white);
+    }
+
+    .demographics .section-title-wrap p {
+      color: #94A3B8;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .demo-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+    }
+
+    .demo-card h3 {
+      color: var(--bg-white);
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .demo-card .age-badge {
+      display: inline-block;
+      color: #F87171;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
-    .details-title {
-      font-size: 1.65rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 1rem;
+    .demo-card p {
+      color: #CBD5E1;
+      font-size: 0.9rem;
+      line-height: 1.55;
     }
 
-    .details-desc {
-      color: var(--text-muted);
-      font-size: 0.975rem;
-      line-height: 1.65;
-      margin-bottom: 1.5rem;
+    /* Booking & Inquiry */
+    .booking {
+      padding: 5rem 0;
+      background-color: var(--bg-light);
     }
 
-    .symptom-tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .symptom-pill {
-      font-size: 0.825rem;
-      font-weight: 600;
-      background: var(--surface-alt);
-      color: var(--primary);
-      padding: 0.4rem 0.85rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--border);
-    }
-
-    /* Core Services Grid */
-    .services-section {
-      padding: 6rem 0;
-    }
-
-    .services-grid {
+    .booking-wrapper {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 2rem;
-    }
-
-    .service-card {
-      background: var(--surface);
-      padding: 2.25rem 2rem;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(46, 139, 87, 0.4);
-    }
-
-    .service-icon {
-      width: 54px;
-      height: 54px;
-      border-radius: var(--radius-md);
-      background: var(--accent-tint);
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .service-card h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.85rem;
-    }
-
-    .service-card p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-      flex-grow: 1;
-    }
-
-    .service-list {
-      list-style: none;
-      border-top: 1px solid var(--border);
-      padding-top: 1.25rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .service-list li {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .service-list li svg {
-      stroke: var(--accent);
-      flex-shrink: 0;
-    }
-
-    /* Philosophy / Why Us */
-    .philosophy-section {
-      background: var(--primary);
-      color: #ffffff;
-      padding: 6rem 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .philosophy-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4.5rem;
-      align-items: center;
-    }
-
-    .philosophy-content .eyebrow {
-      background: rgba(255, 255, 255, 0.12);
-      color: #72e09e;
-    }
-
-    .philosophy-content h2 {
-      color: #ffffff;
-      font-size: clamp(2rem, 3.5vw, 2.75rem);
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 1.25rem;
-      letter-spacing: -0.02em;
-    }
-
-    .philosophy-content p {
-      color: #bdd4c6;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-bottom: 2rem;
-    }
-
-    .philosophy-points {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .point-card {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 1.5rem;
-      border-radius: var(--radius-md);
-    }
-
-    .point-card h4 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: #ffffff;
-    }
-
-    .point-card p {
-      font-size: 0.875rem;
-      color: #a4c2b0;
-      margin-bottom: 0;
-    }
-
-    .quote-box {
-      background: #ffffff;
-      color: var(--text);
-      padding: 3rem;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      background: var(--bg-white);
       border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-lg);
-      position: relative;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
     }
 
-    .quote-mark {
-      font-size: 4rem;
-      font-family: serif;
-      color: var(--accent);
-      line-height: 1;
-      position: absolute;
-      top: 1.5rem;
-      left: 2rem;
-      opacity: 0.2;
-    }
-
-    .quote-box blockquote {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--primary);
-      line-height: 1.5;
-      margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .quote-author {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .author-avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: var(--accent-tint);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    /* Testimonials */
-    .testimonials-section {
-      padding: 6rem 0;
-    }
-
-    .testimonial-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .testi-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 2.25rem;
+    .booking-info {
+      background: linear-gradient(145deg, var(--maroon-dark) 0%, var(--maroon) 100%);
+      color: var(--bg-white);
+      padding: 3rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: var(--shadow-sm);
     }
 
-    .stars {
-      display: flex;
-      gap: 0.25rem;
-      color: #e5a93b;
+    .booking-info h3 {
+      color: var(--bg-white);
+      font-size: 1.85rem;
       margin-bottom: 1rem;
     }
 
-    .testi-text {
-      font-size: 0.975rem;
-      color: var(--text);
-      line-height: 1.65;
-      margin-bottom: 1.5rem;
+    .booking-info p {
+      color: #FCE7E9;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
     }
 
-    .testi-meta {
+    .clinic-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    .clinic-detail-row {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid var(--border);
-      padding-top: 1.25rem;
+      gap: 0.75rem;
+      color: #FCE7E9;
     }
 
-    .patient-name {
-      font-weight: 700;
-      color: var(--primary);
-      font-size: 0.95rem;
+    .clinic-detail-row strong {
+      color: var(--bg-white);
     }
 
-    .patient-condition {
-      font-size: 0.8rem;
-      color: var(--accent);
+    .booking-form-wrap {
+      padding: 3rem;
+    }
+
+    .booking-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group.full {
+      grid-column: span 2;
+    }
+
+    label {
+      font-size: 0.85rem;
       font-weight: 600;
+      color: var(--dark-slate);
     }
 
-    /* FAQ Section */
-    .faq-section {
-      padding: 5rem 0 6rem;
-      background: var(--surface-alt);
-      border-top: 1px solid var(--border);
-    }
-
-    .faq-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      margin-bottom: 1rem;
-      overflow: hidden;
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--dark-slate);
+      background-color: var(--bg-light);
       transition: var(--transition);
     }
 
-    .faq-question {
-      width: 100%;
-      padding: 1.4rem 1.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--primary);
-      background: none;
-      border: none;
-      cursor: pointer;
-      text-align: left;
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--maroon);
+      background-color: var(--bg-white);
+      box-shadow: 0 0 0 3px rgba(122, 28, 40, 0.12);
     }
 
-    .faq-icon {
-      transition: transform 0.3s ease;
-      stroke: var(--accent);
-      flex-shrink: 0;
-    }
-
-    .faq-item.open .faq-icon {
-      transform: rotate(180deg);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.3s ease;
-      padding: 0 1.75rem;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.65;
-    }
-
-    .faq-item.open .faq-answer {
-      max-height: 250px;
-      padding-bottom: 1.5rem;
-    }
-
-    /* Booking Modal & Floating Trigger */
+    /* Custom Notification Modal */
     .modal-overlay {
+      display: none;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(16, 40, 28, 0.7);
-      backdrop-filter: blur(6px);
-      display: flex;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
       align-items: center;
       justify-content: center;
-      z-index: 2000;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
       padding: 1.5rem;
     }
 
-    .modal-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
     .modal-box {
-      background: var(--surface);
+      background: var(--bg-white);
+      max-width: 460px;
       width: 100%;
-      max-width: 600px;
       border-radius: var(--radius-lg);
-      padding: 2.5rem;
+      padding: 2.5rem 2rem;
+      text-align: center;
       box-shadow: var(--shadow-lg);
-      position: relative;
-      transform: scale(0.95);
-      transition: transform 0.3s ease;
-      max-height: 90vh;
-      overflow-y: auto;
+      animation: modalPop 0.25s ease-out;
     }
 
-    .modal-overlay.active .modal-box {
-      transform: scale(1);
+    @keyframes modalPop {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
 
-    .modal-close-btn {
-      position: absolute;
-      top: 1.25rem;
-      right: 1.25rem;
-      background: var(--surface-alt);
-      border: none;
-      width: 38px;
-      height: 38px;
+    .modal-check {
+      width: 56px;
+      height: 56px;
+      background: var(--maroon-tint);
+      color: var(--maroon);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      color: var(--text);
+      font-size: 1.75rem;
+      margin: 0 auto 1.25rem auto;
+      font-weight: 800;
     }
 
-    .modal-close-btn:hover {
-      background: var(--border);
+    .modal-box h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
     }
 
-    .form-group {
-      margin-bottom: 1.25rem;
-    }
-
-    .form-label {
-      display: block;
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 0.4rem;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 0.8rem 1rem;
-      font-size: 0.95rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: var(--bg);
-      color: var(--text);
-      outline: none;
-      transition: var(--transition);
-    }
-
-    .form-control:focus {
-      border-color: var(--accent);
-      background: #ffffff;
-      box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.15);
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .pain-scale-container {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    .pain-slider {
-      flex-grow: 1;
-      accent-color: var(--accent);
-      cursor: pointer;
-    }
-
-    .pain-badge {
-      font-weight: 700;
+    .modal-box p {
       font-size: 0.9rem;
-      background: var(--accent-tint);
-      color: var(--accent);
-      padding: 0.25rem 0.65rem;
-      border-radius: var(--radius-pill);
-      min-width: 45px;
-      text-align: center;
-    }
-
-    .form-notice {
-      display: none;
-      background: #e7f7ed;
-      color: #196335;
-      padding: 1rem;
-      border-radius: var(--radius-sm);
-      font-size: 0.9rem;
-      margin-top: 1rem;
-      text-align: center;
-      font-weight: 600;
+      margin-bottom: 1.75rem;
     }
 
     /* Footer */
-    .footer {
-      background: #0f271b;
-      color: #a0b6aa;
-      padding: 5rem 0 2.5rem;
+    footer {
+      background-color: var(--dark-slate);
+      color: #94A3B8;
+      padding: 3.5rem 0 2rem 0;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .footer-grid {
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 4rem;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
     }
 
     .footer-col h4 {
-      color: #ffffff;
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 1.25rem;
+      color: var(--bg-white);
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
-    .footer-links {
+    .footer-col ul {
       list-style: none;
-    }
-
-    .footer-links li {
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-links a:hover {
-      color: #ffffff;
-    }
-
-    .footer-info-row {
       display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      margin-bottom: 0.85rem;
-      font-size: 0.9rem;
+      flex-direction: column;
+      gap: 0.65rem;
     }
 
-    .footer-info-row svg {
-      stroke: var(--accent);
-      flex-shrink: 0;
-      margin-top: 0.2rem;
+    .footer-col a {
+      color: #94A3B8;
+      font-size: 0.875rem;
+    }
+
+    .footer-col a:hover {
+      color: var(--bg-white);
     }
 
     .footer-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid rgba(255, 255, 255, 0.07);
       padding-top: 2rem;
-      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
       flex-wrap: wrap;
       gap: 1rem;
     }
 
-    .status-indicator {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: #72e09e;
-      font-weight: 600;
-      font-size: 0.85rem;
-    }
-
-    .status-indicator::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      background: #72e09e;
-      border-radius: 50%;
-    }
-
-    /* Responsive Queries */
-    @media (max-width: 992px) {
-      .hero-grid,
-      .philosophy-grid,
-      .explorer-layout {
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
       }
-
-      .floating-badge {
-        display: none;
+      .booking-wrapper {
+        grid-template-columns: 1fr;
       }
-
       .footer-grid {
         grid-template-columns: 1fr 1fr;
       }
     }
 
     @media (max-width: 768px) {
-      .nav-links,
-      .nav-actions .btn-secondary {
+      .nav-links {
         display: none;
       }
-
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        right: 0;
+        background: var(--bg-white);
+        border-bottom: 1px solid var(--border-subtle);
+        padding: 1.5rem;
+        gap: 1.25rem;
+        box-shadow: var(--shadow-md);
+      }
       .mobile-menu-btn {
         display: block;
       }
-
-      .form-row,
-      .philosophy-points {
+      .hero-text h1 {
+        font-size: 2.4rem;
+      }
+      .booking-form {
         grid-template-columns: 1fr;
       }
-
-      .hero-proof {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.25rem;
+      .form-group.full {
+        grid-column: span 1;
       }
-
       .footer-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header class="header">
-    <div class="container nav-container">
-      <a href="#" class="brand-logo" aria-label="Aura Health & Chiropractic Home">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2v20M8 5a4 4 0 0 1 8 0M7 10a5 5 0 0 1 10 0M6 15a6 6 0 0 1 12 0M8 19a4 4 0 0 1 8 0"/>
-        </svg>
-        <span>Aura Chiropractic</span>
-      </a>
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container">
+      Active recovery and biomechanical care for youth, scholastic, and collegiate competitors. <span>HSA and FSA approved.</span>
+    </div>
+  </div>
 
-      <ul class="nav-links">
-        <li><a href="#services">Specialties</a></li>
-        <li><a href="#spine-explorer">Spine Checker</a></li>
-        <li><a href="#philosophy">Our Method</a></li>
-        <li><a href="#testimonials">Stories</a></li>
-        <li><a href="#faq">FAQ</a></li>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="container nav-inner">
+      <a href="#" class="logo" aria-label="Apex Kinetic Home">
+        <div class="logo-icon">A</div>
+        <span>APEX KINETIC</span>
+      </a>
+      
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#why-us">Why Apex</a></li>
+        <li><a href="#treatments">Treatments</a></li>
+        <li><a href="#demographics">Athletes</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact" class="btn btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.85rem;">Book Evaluation</a></li>
       </ul>
 
-      <div class="nav-actions">
-        <a href="tel:5551234567" class="btn btn-secondary">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-          </svg>
-          (555) 123-4567
-        </a>
-        <button class="btn btn-primary" onclick="openBookingModal()">Schedule Exam</button>
-        <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Toggle menu">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation">
+        &#9776;
+      </button>
     </div>
   </header>
 
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-bg-accent"></div>
       <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="eyebrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-            Evidence-Based & Gentle Chiropractic Care
-          </div>
-          <h1>Restore Natural Alignment. <span>Reclaim Energy.</span></h1>
-          <p class="hero-lead">
-            We look past quick fixes. Our integrative spinal care blends non-invasive biomechanical adjustments, neuro-muscular release, and personalized restorative therapies.
+        <div class="hero-text">
+          <div class="badge">Performance Chiropractic for Ages 12 to 30</div>
+          <h1>Built for athletes who want <span>results</span>, not routine visits.</h1>
+          <p>
+            We combine high-velocity joint mobilization, myofascial release, and kinetic movement screenings to resolve injuries, eliminate pain points, and keep you in the game.
           </p>
-
-          <div class="hero-ctas">
-            <button class="btn btn-primary" onclick="openBookingModal()">
-              Schedule Initial Consultation
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </button>
-            <a href="#spine-explorer" class="btn btn-secondary">Explore Symptom Map</a>
+          <div class="hero-actions">
+            <a href="#pricing" class="btn btn-primary">View Rates and Packages</a>
+            <a href="#treatments" class="btn btn-outline">Explore Treatments</a>
           </div>
-
-          <div class="hero-proof">
-            <div class="proof-item">
-              <span class="proof-number">14,000+</span>
-              <span class="proof-label">Gentle Adjustments Given</span>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <strong>12 to 30</strong>
+              <span>Target Age Focus</span>
             </div>
-            <div class="proof-item">
-              <span class="proof-number">4.9 / 5.0</span>
-              <span class="proof-label">Over 380 Verified Reviews</span>
+            <div class="stat-item">
+              <strong>1-on-1</strong>
+              <span>Always with Doctor</span>
             </div>
-            <div class="proof-item">
-              <span class="proof-number">100%</span>
-              <span class="proof-label">Individualized Care Roadmaps</span>
+            <div class="stat-item">
+              <strong>Zero</strong>
+              <span>Long-Term Contracts</span>
             </div>
           </div>
         </div>
 
         <div class="hero-card">
-          <!-- Floating Badge Top -->
-          <div class="floating-badge badge-top-right">
-            <div class="badge-icon-box">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-            </div>
-            <div class="badge-text">
-              <strong>Zero High-Force Twisting</strong>
-              <span>Gentle instrument-assisted options</span>
+          <div class="hero-card-header">
+            <h3>Clinical Standards</h3>
+            <div class="live-status">
+              <span class="live-dot"></span>
+              Accepting New Athletes
             </div>
           </div>
-
-          <div class="spine-graphic-wrapper">
-            <div class="pulse-dot" style="top: 25%; left: 50%; transform: translateX(-50%);"></div>
-            <div class="pulse-dot" style="top: 55%; left: 50%; transform: translateX(-50%); animation-delay: 0.7s;"></div>
-            <div class="pulse-dot" style="top: 78%; left: 50%; transform: translateX(-50%); animation-delay: 1.4s;"></div>
-
-            <!-- Stylized Spine Illustration (SVG) -->
-            <svg width="150" height="340" viewBox="0 0 100 240" fill="none" stroke="var(--primary)" stroke-linecap="round" stroke-linejoin="round">
-              <!-- Skull Base -->
-              <ellipse cx="50" cy="18" rx="20" ry="12" stroke-width="2.5" stroke="#2e8b57" fill="#eaf4ed"/>
-              
-              <!-- Cervical Spine (C1-C7) -->
-              <path d="M46 34 h8 M44 42 h12 M43 50 h14 M44 58 h12 M42 66 h16" stroke-width="2.8" stroke="#2e8b57"/>
-              <circle cx="50" cy="50" r="3" fill="#2e8b57"/>
-
-              <!-- Thoracic Spine (T1-T12) -->
-              <path d="M41 78 h18 M40 88 h20 M39 98 h22 M38 108 h24 M38 118 h24 M39 128 h22 M40 138 h20 M41 148 h18" stroke-width="3" stroke="#143827"/>
-              <path d="M36 88 C26 95 24 110 32 120 M64 88 C74 95 76 110 68 120" stroke-width="1.8" stroke="#8fa096" stroke-dasharray="2 3"/>
-
-              <!-- Lumbar Spine (L1-L5) -->
-              <path d="M38 162 h24 M37 174 h26 M36 186 h28 M35 198 h30 M36 210 h28" stroke-width="3.5" stroke="#2e8b57"/>
-
-              <!-- Sacrum & Pelvis -->
-              <polygon points="40,218 60,218 53,235 47,235" stroke-width="2.5" fill="#f3f6f2" stroke="#143827"/>
-              <path d="M35 214 C20 216 16 230 28 238 M65 214 C80 216 84 230 72 238" stroke-width="2" stroke="#143827"/>
-            </svg>
-          </div>
-
-          <!-- Floating Badge Bottom -->
-          <div class="floating-badge badge-bottom-left">
-            <div class="badge-icon-box" style="background: var(--gold-soft); color: var(--gold);">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 6v6l4 2"></path>
-              </svg>
-            </div>
-            <div class="badge-text">
-              <strong>Same-Day Availability</strong>
-              <span>For acute discomfort & injury</span>
-            </div>
-          </div>
+          <ul class="focus-list">
+            <li class="focus-item">
+              <div class="focus-icon">&#10003;</div>
+              <div>
+                <strong>Evidence-Based Adjustments</strong>
+                <p style="font-size: 0.825rem; margin-top: 2px;">Restoring full joint clearance without unnecessary repeat treatments.</p>
+              </div>
+            </li>
+            <li class="focus-item">
+              <div class="focus-icon">&#10003;</div>
+              <div>
+                <strong>Active Soft Tissue Release</strong>
+                <p style="font-size: 0.825rem; margin-top: 2px;">Targeted muscle work to relieve tension in hamstrings, shoulders, and hip flexors.</p>
+              </div>
+            </li>
+            <li class="focus-item">
+              <div class="focus-icon">&#10003;</div>
+              <div>
+                <strong>Sport-Specific Return to Play</strong>
+                <p style="font-size: 0.825rem; margin-top: 2px;">Tailored protocols for track, soccer, swimming, baseball, and weightlifting.</p>
+              </div>
+            </li>
+            <li class="focus-item">
+              <div class="focus-icon">&#10003;</div>
+              <div>
+                <strong>Direct Collaboration</strong>
+                <p style="font-size: 0.825rem; margin-top: 2px;">Open updates with your school coaches and personal athletic trainers.</p>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- Interactive Symptom & Spine Region Explorer -->
-    <section class="explorer-section" id="spine-explorer">
+    <!-- Why Us Section -->
+    <section class="why-us" id="why-us">
       <div class="container">
-        <div class="text-center">
-          <span class="eyebrow">Interactive Assessment Guide</span>
-          <h2 class="section-title">Where Are You Feeling Tension?</h2>
-          <p class="section-subtitle center-block">
-            Your spine houses your central nervous system. Click through different vertebral segments to learn what common symptoms signal misalignment.
-          </p>
-        </div>
-
-        <div class="explorer-layout">
-          <div class="segment-picker" role="tablist">
-            <button class="segment-btn active" onclick="selectSpineSegment('cervical', this)">
-              <div>
-                <div class="seg-title">Cervical Spine (Neck)</div>
-                <div class="seg-subtitle">C1 - C7 Vertebrae</div>
-              </div>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </button>
-
-            <button class="segment-btn" onclick="selectSpineSegment('thoracic', this)">
-              <div>
-                <div class="seg-title">Thoracic Spine (Mid-Back)</div>
-                <div class="seg-subtitle">T1 - T12 Vertebrae</div>
-              </div>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </button>
-
-            <button class="segment-btn" onclick="selectSpineSegment('lumbar', this)">
-              <div>
-                <div class="seg-title">Lumbar Spine (Lower Back)</div>
-                <div class="seg-subtitle">L1 - L5 Vertebrae</div>
-              </div>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </button>
-
-            <button class="segment-btn" onclick="selectSpineSegment('sacral', this)">
-              <div>
-                <div class="seg-title">Sacrum & Pelvic Joint (SI Joint)</div>
-                <div class="seg-subtitle">Base of Spine & Hips</div>
-              </div>
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </button>
-          </div>
-
-          <div class="explorer-details" id="explorer-content">
-            <!-- Dynamic Content Injected by JavaScript -->
-            <div>
-              <span class="details-tag" id="region-tag">Region: C1 - C7</span>
-              <h3 class="details-title" id="region-title">Cervical Spine & Upper Neck</h3>
-              <p class="details-desc" id="region-desc">
-                The cervical vertebrae support the entire weight of your head and enable high degrees of motion. Subtle misalignments here often compress cranial nerves and trigger tension patterns radiating up to the head or down into the shoulders.
-              </p>
-              
-              <div style="font-weight: 700; font-size: 0.85rem; color: var(--primary); margin-bottom: 0.6rem; text-transform: uppercase;">
-                Frequent Symptoms:
-              </div>
-              <div class="symptom-tag-list" id="region-symptoms">
-                <span class="symptom-pill">Tension Headaches & Migraines</span>
-                <span class="symptom-pill">Neck Stiffness / "Tech Neck"</span>
-                <span class="symptom-pill">Tingling in Arms or Fingers</span>
-                <span class="symptom-pill">Jaw (TMJ) Discomfort</span>
-              </div>
-            </div>
-
-            <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 1.5rem;">
-              <div>
-                <strong style="color: var(--primary); font-size: 0.9rem;">Targeted Protocol:</strong>
-                <div style="font-size: 0.85rem; color: var(--text-muted);" id="region-protocol">Gentle Blair/Toggle adjustment, cervical decompression & trigger point therapy.</div>
-              </div>
-              <button class="btn btn-accent" onclick="openBookingModal('Cervical / Neck Exam')">Book for This Area</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Core Services -->
-    <section class="services-section" id="services">
-      <div class="container">
-        <div class="text-center">
-          <span class="eyebrow">Personalized Wellness</span>
-          <h2 class="section-title">Clinical Care For Every Stage of Healing</h2>
-          <p class="section-subtitle center-block">
-            Whether you are overcoming chronic disc complications, recovering from athletic strain, or pursuing proactive postural health, our gentle therapies are curated around you.
-          </p>
-        </div>
-
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">
-              <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-              </svg>
-            </div>
-            <h3>Chiropractic Adjustments</h3>
-            <p>Precise, low-force segmental corrections designed to restore proper joint mechanics, relieve nerve impingement, and reduce inflammation.</p>
-            <ul class="service-list">
-              <li>
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                Diversified & Thompson Drop Table
-              </li>
-              <li>
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                Activator instrument gentle technique
-              </li>
-              <li>
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                Extremity adjustments (knees, ankles, wrists)
-              </li>
-            </ul>
-            <button class="btn btn-secondary" style="width: 100%;" onclick="openBookingModal('Chiropractic Adjustment')">Select Care</button>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon" style="background: var(--gold-soft); color: var(--gold);">
-              <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="12" y1="8" x2="12" y2="12"></line>
-                <line x1="12" y1="16" x2="12.01" y2="16"></line>
-              </svg>
-            </div>
-            <h3>Non-Surgical Decompression</h3>
-            <p>Gentle computer-modulated traction that creates negative intradiscal pressure, drawing herniated disc material back in place and infusing nutrients.</p>
-            <ul class="service-list">
-              <li>
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                Relief for herniated or bulging discs
-              </li>
-              <li>
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                Sciatica and chronic nerve pain
-              </li>
-              <li>
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                FDA-cleared spinal traction systems
-              </li>
-            </ul>
-            <button class="btn btn-secondary" style="width: 100%;" onclick="openBookingModal('Spinal Decompression')">Select Care</button>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon">
-              <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
-                <line x1="16" y1="8" x2="2" y2="22"></line>
-                <line x1="17.5" y1="15" x2="9" y2="15"></line>
-              </svg>
-            </div>
-            <h3>Postural Rehabilitation</h3>
-            <p>Targeted corrective exercise protocols to address muscular imbalances caused by desk work, forward-head carriage, and prolonged sedentary habits.</p>
-            <ul class="service-list">
-              <li>
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                Digital postural screening analysis
-              </li>
-              <li>
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                Scapular & core stabilization plans
-              </li>
-              <li>
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                Ergonomic workstation recommendations
-              </li>
-            </ul>
-            <button class="btn btn-secondary" style="width: 100%;" onclick="openBookingModal('Posture Rehab')">Select Care</button>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon">
-              <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
-                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-                <line x1="6" y1="1" x2="6" y2="4"></line>
-                <line x1="10" y1="1" x2="10" y2="4"></line>
-                <line x1="14" y1="1" x2="14" y2="4"></line>
-              </svg>
-            </div>
-            <h3>Myofascial & Soft Tissue Therapy</h3>
-            <p>Targeted instrument-assisted soft tissue mobilization (IASTM) and deep muscle work to dissolve stubborn scar tissue and muscle spasms.</p>
-            <ul class="service-list">
-              <li>
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                Rapid relief for chronic tight shoulders
-              </li>
-              <li>
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                Active release technique (ART) methods
-              </li>
-              <li>
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                Enhances adjustment longevity
-              </li>
-            </ul>
-            <button class="btn btn-secondary" style="width: 100%;" onclick="openBookingModal('Myofascial Therapy')">Select Care</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Philosophy / The Whole-Body Difference -->
-    <section class="philosophy-section" id="philosophy">
-      <div class="container philosophy-grid">
-        <div class="philosophy-content">
-          <div class="eyebrow">The Aura Health Philosophy</div>
-          <h2>We don't chase symptoms. We fix structural root causes.</h2>
+        <div class="section-title-wrap">
+          <div class="badge">The Difference</div>
+          <h2>Why athletes choose Apex Kinetic</h2>
           <p>
-            Traditional medicine often masks spinal distress with prescription pills or recommends premature surgeries. We believe your body possesses an innate intelligence to heal once structural barriers and neural interferences are removed.
+            Younger athletes and competitive adults require precise biomechanical care, not passive therapies or endless appointment calendars.
           </p>
-
-          <div class="philosophy-points">
-            <div class="point-card">
-              <h4>Diagnostic Precision</h4>
-              <p>Thorough orthopedic, neurologic, and bilateral weight-bearing diagnostics prior to any treatment.</p>
-            </div>
-            <div class="point-card">
-              <h4>Patient Empowerment</h4>
-              <p>We teach you the biomechanical habits, stretches, and sleeping positions to stay out of our office.</p>
-            </div>
-            <div class="point-card">
-              <h4>Collaborative Network</h4>
-              <p>We work in harmony with your primary physicians, physical therapists, and specialists.</p>
-            </div>
-            <div class="point-card">
-              <h4>No Hidden Contracts</h4>
-              <p>Honest care programs calibrated precisely to your individual recovery velocity.</p>
-            </div>
-          </div>
         </div>
 
-        <div class="quote-box">
-          <div class="quote-mark">“</div>
-          <blockquote>
-            "True spinal wellness isn't simply the absence of severe pain—it is the freedom to wake up clear-headed, move through your work day without fatigue, and engage fully in the activities you love."
-          </blockquote>
-          <div class="quote-author">
-            <div class="author-avatar">DV</div>
-            <div>
-              <div style="font-weight: 800; color: var(--primary);">Dr. Daniel Vance, DC</div>
-              <div style="font-size: 0.85rem; color: var(--text-muted);">Lead Chiropractic Physician & Founder</div>
-            </div>
+        <div class="features-grid">
+          <div class="feature-box">
+            <div class="feature-number">01</div>
+            <h3>No Maintenance Trap</h3>
+            <p>
+              Our objective is discharge, not dependence. We identify the root issue, treat it aggressively, prescribe active drills, and send you back to competition.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-number">02</div>
+            <h3>Growth Plate Awareness</h3>
+            <p>
+              Athletes ages 12 to 18 possess unique musculoskeletal anatomy. We apply gentle, measured techniques that respect open growth plates and spinal maturation.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-number">03</div>
+            <h3>Complete Kinetic Chain Focus</h3>
+            <p>
+              Ankle stiffness creates knee torque. Hip rotation limits shoulder arm slots. We evaluate your entire movement chain rather than solely where it hurts.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-number">04</div>
+            <h3>Transparent Flat Rates</h3>
+            <p>
+              Every service has an upfront price. No surprise lab invoices, no hidden add-ons for muscle stimulation, and student-athlete discounts on all packages.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Patient Stories / Testimonials -->
-    <section class="testimonials-section" id="testimonials">
+    <!-- Treatments Section with Interactive Tabs -->
+    <section class="treatments" id="treatments">
       <div class="container">
-        <div class="text-center">
-          <span class="eyebrow">Patient Success</span>
-          <h2 class="section-title">Lives Transformed By Proper Alignment</h2>
-          <p class="section-subtitle center-block">
-            Read how our community members moved past crippling sciatic flares, persistent migraines, and athletic injuries.
+        <div class="section-title-wrap">
+          <div class="badge">Clinical Care</div>
+          <h2>Specialized Athletic Treatments</h2>
+          <p>
+            Select a category below to see how our treatments support speed, power, rotational torque, and joint longevity.
           </p>
         </div>
 
-        <div class="testimonial-cards">
-          <div class="testi-card">
+        <!-- Filter Tabs -->
+        <div class="tab-bar">
+          <button class="tab-btn active" data-filter="all">All Treatments</button>
+          <button class="tab-btn" data-filter="spine">Spine and Joint</button>
+          <button class="tab-btn" data-filter="soft-tissue">Soft Tissue</button>
+          <button class="tab-btn" data-filter="rehab">Active Movement</button>
+        </div>
+
+        <!-- Treatments Grid -->
+        <div class="treatments-grid" id="treatmentsGrid">
+          
+          <div class="treatment-card" data-category="spine">
             <div>
-              <div class="stars">★★★★★</div>
-              <p class="testi-text">
-                "After six years of desk work, I had daily throbbing headaches and neck tightness. Within 4 weeks under Dr. Vance’s gentle protocol, my headaches are completely gone. I can finally look over my shoulder while driving without wincing."
+              <div class="treatment-tag">Spine and Joint</div>
+              <h3>High Velocity Adjustments</h3>
+              <p>
+                Precise joint cavitation targeting restricted vertebrae, sacroiliac joints, and extremities to restore natural articular motion and reduce neural inhibition.
               </p>
             </div>
-            <div class="testi-meta">
-              <span class="patient-name">Rebecca S.</span>
-              <span class="patient-condition">Chronic Cervicogenic Headaches</span>
+            <div class="treatment-meta">
+              Focus: Thoracic extension, hip capsule clearance, rib dysfunction.
             </div>
           </div>
 
-          <div class="testi-card">
+          <div class="treatment-card" data-category="soft-tissue">
             <div>
-              <div class="stars">★★★★★</div>
-              <p class="testi-text">
-                "An MRI showed an L4-L5 disc protrusion and I was recommended steroid injections. The decompression table combined with their rehab exercises relieved my radiating leg pain within three weeks. Remarkable clinic."
+              <div class="treatment-tag">Soft Tissue</div>
+              <h3>Active Release and Myofascial Mobilization</h3>
+              <p>
+                Hands-on tension release applied while the athlete moves through an active range of motion. Breaks down dense scar tissue and restores muscle glide.
               </p>
             </div>
-            <div class="testi-meta">
-              <span class="patient-name">Marcus K.</span>
-              <span class="patient-condition">Lumbar Disc Herniation & Sciatica</span>
+            <div class="treatment-meta">
+              Focus: Rotator cuff impingement, hamstring pulls, tight hip flexors.
             </div>
           </div>
 
-          <div class="testi-card">
+          <div class="treatment-card" data-category="soft-tissue">
             <div>
-              <div class="stars">★★★★★</div>
-              <p class="testi-text">
-                "What stands out is how gentle and thoughtful the adjustments are. There is no violent twisting or harsh popping. They explained the x-rays with incredible clarity and gave me practical posture changes for home."
+              <div class="treatment-tag">Soft Tissue</div>
+              <h3>Instrument Assisted Soft Tissue (IASTM)</h3>
+              <p>
+                Beveled stainless steel tools designed to locate and remediate fascial adhesions, stimulate localized blood flow, and initiate accelerated tissue remodeling.
               </p>
             </div>
-            <div class="testi-meta">
-              <span class="patient-name">Elena M.</span>
-              <span class="patient-condition">Postural Correction & Upper Back</span>
+            <div class="treatment-meta">
+              Focus: Shin splints, plantar fasciitis, tennis elbow, Achilles tendinopathy.
             </div>
           </div>
+
+          <div class="treatment-card" data-category="rehab">
+            <div>
+              <div class="treatment-tag">Active Movement</div>
+              <h3>Dynamic Neuromuscular Stabilization</h3>
+              <p>
+                Functional stabilization protocols based on developmental kinesiology to activate deep spinal stabilizers, improve intra-abdominal pressure, and build core control.
+              </p>
+            </div>
+            <div class="treatment-meta">
+              Focus: Squat depth, throwing mechanics, rotational core stability.
+            </div>
+          </div>
+
+          <div class="treatment-card" data-category="spine">
+            <div>
+              <div class="treatment-tag">Spine and Joint</div>
+              <h3>Extremity Joint Mechanics</h3>
+              <p>
+                Sports chiropractic extends beyond the back. We restore alignment and gliding mechanics in ankles, knees, wrists, and shoulders to optimize force transfer.
+              </p>
+            </div>
+            <div class="treatment-meta">
+              Focus: Ankle dorsiflexion, patellar tracking, AC joint restrictions.
+            </div>
+          </div>
+
+          <div class="treatment-card" data-category="rehab">
+            <div>
+              <div class="treatment-tag">Active Movement</div>
+              <h3>Return-to-Play Movement Screen</h3>
+              <p>
+                Video assessment and load testing to pinpoint asymmetric compensation patterns before an athlete resumes full contact or maximal velocity training.
+              </p>
+            </div>
+            <div class="treatment-meta">
+              Focus: Post-injury clearance, lateral shift mitigation, landing mechanics.
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section" id="faq">
+    <!-- Athlete Age Demographics Section -->
+    <section class="demographics" id="demographics">
       <div class="container">
-        <div class="text-center">
-          <span class="eyebrow">Got Questions?</span>
-          <h2 class="section-title">Common Questions & Answers</h2>
-          <p class="section-subtitle center-block">
-            Everything you need to know about your first appointment, insurance coverage, and our treatment safety standards.
+        <div class="section-title-wrap">
+          <div class="badge" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #FCA5A5;">Target Audience Focus</div>
+          <h2>Customized for your stage of competition</h2>
+          <p>
+            A 14-year-old soccer player has different musculoskeletal demands than a 26-year-old powerlifter. We calibrate our treatment according to age and sport demands.
           </p>
         </div>
 
-        <div class="faq-container">
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-              <span>Does a chiropractic adjustment hurt?</span>
-              <svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              Most patients feel instantaneous relief or lightness immediately following an adjustment. Our practitioners utilize gentle, calibrated force. If an area is acutely inflamed, mild tenderness may occur for a few hours, similar to post-workout muscle soreness.
-            </div>
+        <div class="demo-grid">
+          <div class="demo-card">
+            <span class="age-badge">Ages 12 to 17</span>
+            <h3>Scholastic and Club Athletes</h3>
+            <p>
+              Growing bodies frequently battle Osgood-Schlatter disease, Sever disease, posture strain from heavy school bags, and repetitive sport specialization. Our care is gentle, conservative, and emphasizes foundational core control.
+            </p>
           </div>
 
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-              <span>What is that "popping" sound during an adjustment?</span>
-              <svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              The sound is known as cavitation. It is simply the release of small nitrogen gas bubbles from within the synovial joint fluid when the joint capsule expands. It is completely natural, safe, and not bones rubbing together. We also offer non-cavitation instrument methods.
-            </div>
+          <div class="demo-card">
+            <span class="age-badge">Ages 18 to 23</span>
+            <h3>Collegiate and Varsity Level</h3>
+            <p>
+              High volume training and rigorous schedules leave little time for lingering injuries. We provide swift acute pain mitigation, joint release, and movement maintenance to prevent missed competitions and preserve scholarships.
+            </p>
           </div>
 
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-              <span>What should I expect during my first visit?</span>
-              <svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              Your initial 45-minute visit includes a full health intake, orthopedic and neurologic range-of-motion testing, posture analysis, and digital palpation. If safe and clinically indicated, you will also receive your first gentle relief treatment and clear home instructions.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-              <span>Do you accept health insurance?</span>
-              <svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              Yes, we work with most major PPO insurance plans as an in-network or verified out-of-network provider. We also offer itemized superbills for reimbursement and flexible HSA/FSA health savings account payments with transparent self-pay rates.
-            </div>
+          <div class="demo-card">
+            <span class="age-badge">Ages 24 to 30</span>
+            <h3>Post-Grad and Competitive Adults</h3>
+            <p>
+              Balancing career workloads with high intensity training like CrossFit, marathons, or recreational leagues. We address accumulated microtrauma, hip mobility limits, and disc preservation to keep your athletic peak intact.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Bottom CTA Banner -->
-    <section style="background: var(--surface); padding: 5rem 0; border-bottom: 1px solid var(--border);">
-      <div class="container text-center">
-        <div class="eyebrow">Start Today</div>
-        <h2 class="section-title">Ready to Move and Feel Better?</h2>
-        <p class="section-subtitle center-block">
-          New patient examinations include consultation, digital postural assessment, and personalized treatment roadmap.
-        </p>
-        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-          <button class="btn btn-primary" onclick="openBookingModal()">Book Appointment Online</button>
-          <a href="tel:5551234567" class="btn btn-secondary">Call (555) 123-4567</a>
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div class="badge">Transparent Rates</div>
+          <h2>Honest pricing with zero hidden fees</h2>
+          <p>
+            No surprise billing statements. Every session includes your consultation, adjustments, and hands-on soft tissue therapy in one simple rate.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Card 1 -->
+          <div class="price-card">
+            <h3>Initial Assessment</h3>
+            <div class="price-target">For new athletes or new injuries</div>
+            <div class="price-amount">
+              <span class="currency">$</span>
+              <span class="val">140</span>
+              <span class="unit">/ 60 min</span>
+            </div>
+            <ul class="price-perks">
+              <li><span class="bullet">&#10003;</span> Full orthopedic and neurological exam</li>
+              <li><span class="bullet">&#10003;</span> Kinetic chain movement screen</li>
+              <li><span class="bullet">&#10003;</span> Full spinal and extremity adjustment</li>
+              <li><span class="bullet">&#10003;</span> Soft tissue release therapy</li>
+              <li><span class="bullet">&#10003;</span> Home corrective exercise blueprint</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline" style="width: 100%;">Book Initial Visit</a>
+          </div>
+
+          <!-- Card 2 (Featured) -->
+          <div class="price-card featured">
+            <div class="popular-flag">Most Popular</div>
+            <h3>Performance Follow Up</h3>
+            <div class="price-target">Regular recovery and maintenance</div>
+            <div class="price-amount">
+              <span class="currency">$</span>
+              <span class="val">75</span>
+              <span class="unit">/ 30 min</span>
+            </div>
+            <ul class="price-perks">
+              <li><span class="bullet">&#10003;</span> Progress re-assessment</li>
+              <li><span class="bullet">&#10003;</span> Full spinal joint manipulation</li>
+              <li><span class="bullet">&#10003;</span> Extremity adjustments (shoulders/ankles)</li>
+              <li><span class="bullet">&#10003;</span> Targeted myofascial or IASTM work</li>
+              <li><span class="bullet">&#10003;</span> Mobility drill updates</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary" style="width: 100%;">Book Follow Up</a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="price-card">
+            <h3>Youth and Student 4-Pack</h3>
+            <div class="price-target">Ages 12 to 22 with active student ID</div>
+            <div class="price-amount">
+              <span class="currency">$</span>
+              <span class="val">260</span>
+              <span class="unit">/ pack ($65 ea)</span>
+            </div>
+            <ul class="price-perks">
+              <li><span class="bullet">&#10003;</span> Four 30-minute full treatment sessions</li>
+              <li><span class="bullet">&#10003;</span> Joint mobilization and muscular work</li>
+              <li><span class="bullet">&#10003;</span> In-season tune-ups before game day</li>
+              <li><span class="bullet">&#10003;</span> Direct coach communication if requested</li>
+              <li><span class="bullet">&#10003;</span> Valid for full 12 months</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline" style="width: 100%;">Select Student Pack</a>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="price-card">
+            <h3>Extended Athletic Rehab</h3>
+            <div class="price-target">Complex or multi-region recovery</div>
+            <div class="price-amount">
+              <span class="currency">$</span>
+              <span class="val">120</span>
+              <span class="unit">/ 45 min</span>
+            </div>
+            <ul class="price-perks">
+              <li><span class="bullet">&#10003;</span> Double region comprehensive treatment</li>
+              <li><span class="bullet">&#10003;</span> Extended soft tissue and percussion therapy</li>
+              <li><span class="bullet">&#10003;</span> Advanced DNS stabilization routines</li>
+              <li><span class="bullet">&#10003;</span> Post-surgical clearance guidance</li>
+              <li><span class="bullet">&#10003;</span> Ideal for acute multi-ligament strains</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline" style="width: 100%;">Book Extended Rehab</a>
+          </div>
+        </div>
+
+        <div class="pricing-guarantee">
+          <div class="guarantee-icon">&#10003;</div>
+          <div class="guarantee-text">
+            <h4>Insurance and Payment Transparency</h4>
+            <p>
+              We are an out of network specialty practice. We accept HSA and FSA cards directly, and we provide coded itemized superbills after each session for straightforward self submission to your health insurer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking and Contact Section -->
+    <section class="booking" id="contact">
+      <div class="container">
+        <div class="booking-wrapper">
+          <div class="booking-info">
+            <div>
+              <div class="badge" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: #FFF;">Direct Contact</div>
+              <h3>Schedule your appointment</h3>
+              <p>
+                Fill out this quick form and our athletic coordinator will confirm your session time within two business hours.
+              </p>
+              <div class="clinic-details">
+                <div class="clinic-detail-row">
+                  <span>Location:</span>
+                  <strong>840 Performance Way, Suite 210</strong>
+                </div>
+                <div class="clinic-detail-row">
+                  <span>Direct Line:</span>
+                  <strong>(555) 489-2033</strong>
+                </div>
+                <div class="clinic-detail-row">
+                  <span>Hours:</span>
+                  <strong>Mon - Fri: 7:00 AM to 6:30 PM</strong>
+                </div>
+                <div class="clinic-detail-row">
+                  <span>Weekend:</span>
+                  <strong>Sat: 8:00 AM to 1:00 PM (Emergency care)</strong>
+                </div>
+              </div>
+            </div>
+            <div style="font-size: 0.8rem; color: #FCE7E9; margin-top: 2rem;">
+              Parent or legal guardian consent is required for athletes under age 18.
+            </div>
+          </div>
+
+          <div class="booking-form-wrap">
+            <form class="booking-form" id="appointmentForm">
+              <div class="form-group">
+                <label for="athleteName">Athlete Name</label>
+                <input type="text" id="athleteName" required placeholder="First and last name">
+              </div>
+
+              <div class="form-group">
+                <label for="athleteAge">Athlete Age</label>
+                <input type="number" id="athleteAge" min="12" max="30" required placeholder="12 to 30">
+              </div>
+
+              <div class="form-group">
+                <label for="athleteSport">Primary Sport or Activity</label>
+                <input type="text" id="athleteSport" required placeholder="e.g. Track, Soccer, Crossfit">
+              </div>
+
+              <div class="form-group">
+                <label for="serviceType">Requested Service</label>
+                <select id="serviceType" required>
+                  <option value="">Select a service</option>
+                  <option value="Initial Assessment ($140)">Initial Assessment ($140)</option>
+                  <option value="Performance Follow Up ($75)">Performance Follow Up ($75)</option>
+                  <option value="Student 4-Pack ($260)">Student 4-Pack ($260)</option>
+                  <option value="Extended Rehab ($120)">Extended Rehab ($120)</option>
+                </select>
+              </div>
+
+              <div class="form-group full">
+                <label for="athleteEmail">Email Address</label>
+                <input type="email" id="athleteEmail" required placeholder="athlete@example.com">
+              </div>
+
+              <div class="form-group full">
+                <label for="injuryNotes">Current Injury or Goals</label>
+                <textarea id="injuryNotes" rows="3" placeholder="Briefly describe what you are feeling and when it started..."></textarea>
+              </div>
+
+              <div class="form-group full">
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Confirm Appointment Request</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Custom Confirmation Modal (No browser alert) -->
+  <div class="modal-overlay" id="confirmModal">
+    <div class="modal-box">
+      <div class="modal-check">&#10003;</div>
+      <h3>Request Received</h3>
+      <p id="modalMsg">
+        Thank you. Our clinic coordinator will contact you via email shortly with confirmed dates and intake instructions.
+      </p>
+      <button class="btn btn-primary" id="modalCloseBtn" style="width: 100%;">Close</button>
+    </div>
+  </div>
+
   <!-- Footer -->
-  <footer class="footer">
+  <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <div class="brand-logo" style="color: #ffffff; margin-bottom: 1.25rem;">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 2v20M8 5a4 4 0 0 1 8 0M7 10a5 5 0 0 1 10 0M6 15a6 6 0 0 1 12 0M8 19a4 4 0 0 1 8 0"/>
-            </svg>
-            <span>Aura Chiropractic</span>
+          <div class="logo" style="color: #FFF; margin-bottom: 1rem;">
+            <div class="logo-icon">A</div>
+            <span>APEX KINETIC</span>
           </div>
-          <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
-            A modern, integrative chiropractic sanctuary dedicated to restoring your structural alignment, alleviating nerve pain, and building enduring physical vitality.
+          <p style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 1rem;">
+            Specialized sports chiropractic care dedicated to joint mobility, soft tissue health, and fast injury recovery for athletes ages 12 to 30.
           </p>
-          <div class="status-indicator">
-            Clinic Open Today until 6:00 PM
-          </div>
         </div>
 
         <div class="footer-col">
-          <h4>Clinical Services</h4>
-          <ul class="footer-links">
-            <li><a href="#services">Gentle Adjustments</a></li>
-            <li><a href="#services">Spinal Decompression</a></li>
-            <li><a href="#services">Postural Correction</a></li>
-            <li><a href="#services">Sports Injury Rehab</a></li>
-            <li><a href="#services">Prenatal & Pediatric Care</a></li>
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#why-us">Why Apex</a></li>
+            <li><a href="#treatments">Treatments</a></li>
+            <li><a href="#demographics">Athletic Focus</a></li>
+            <li><a href="#pricing">Rates and Packages</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Office Hours</h4>
-          <ul class="footer-links">
-            <li>Mon - Thu: 8:00 AM – 6:00 PM</li>
-            <li>Friday: 8:00 AM – 4:00 PM</li>
-            <li>Saturday: 9:00 AM – 1:00 PM</li>
-            <li>Sunday: Closed for Family</li>
+          <h4>Clinical Modalities</h4>
+          <ul>
+            <li><a href="#treatments">Spinal Adjustments</a></li>
+            <li><a href="#treatments">Active Release Technique</a></li>
+            <li><a href="#treatments">IASTM Scraping</a></li>
+            <li><a href="#treatments">DNS Core Stabilization</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Location & Contact</h4>
-          <div class="footer-info-row">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-            <span>425 Wellness Parkway, Suite 210<br>Austin, TX 78701</span>
-          </div>
-          <div class="footer-info-row">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-            <span>(555) 123-4567</span>
-          </div>
-          <div class="footer-info-row">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-            <span>hello@aurachirohealth.com</span>
-          </div>
+          <h4>Clinic Contact</h4>
+          <ul>
+            <li><a href="tel:5554892033">(555) 489-2033</a></li>
+            <li><a href="mailto:info@apexkineticchiro.com">care@apexkinetic.com</a></li>
+            <li>840 Performance Way, Suite 210</li>
+            <li>San Luis Obispo, CA</li>
+          </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>© 2026 Aura Health & Chiropractic Clinic. All rights reserved.</div>
-        <div style="display: flex; gap: 1.5rem;">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Notice of Privacy Practices (HIPAA)</a>
-          <a href="#">Terms of Care</a>
+        <div>&copy; 2026 Apex Kinetic Chiropractic Clinic. All rights reserved.</div>
+        <div style="color: #64748B;">
+          Professional chiropractic care tailored for competitive and scholastic athletes.
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Appointment Booking Modal -->
-  <div class="modal-overlay" id="booking-modal" onclick="handleBackdropClick(event)">
-    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal-close-btn" onclick="closeBookingModal()" aria-label="Close dialog">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-
-      <span class="eyebrow" style="margin-bottom: 0.5rem;">Easy Scheduling</span>
-      <h3 id="modal-title" style="font-size: 1.6rem; color: var(--primary); margin-bottom: 0.5rem; font-weight: 800;">
-        Request an Appointment
-      </h3>
-      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
-        Fill out this brief form. Our patient care coordinator will confirm your exact slot via phone or text within 2 business hours.
-      </p>
-
-      <form id="appointment-form" onsubmit="handleAppointmentSubmit(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="patient-name">Full Name *</label>
-            <input type="text" id="patient-name" class="form-control" placeholder="e.g. Sarah Jenkins" required />
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="patient-phone">Phone Number *</label>
-            <input type="tel" id="patient-phone" class="form-control" placeholder="(555) 000-0000" required />
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="care-type">Primary Reason / Service</label>
-            <select id="care-type" class="form-control">
-              <option value="Initial Chiropractic Exam">New Patient Comprehensive Exam</option>
-              <option value="Chronic Back / Sciatica">Lower Back Pain / Sciatica Relief</option>
-              <option value="Neck & Migraine">Neck Strain & Migraine Care</option>
-              <option value="Spinal Decompression">Spinal Disc Decompression</option>
-              <option value="Postural Rehabilitation">Posture & Ergonomics Rehab</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="pref-time">Preferred Time Window</label>
-            <select id="pref-time" class="form-control">
-              <option value="Morning">Morning (8am - 12pm)</option>
-              <option value="Afternoon">Afternoon (12pm - 4pm)</option>
-              <option value="Late Afternoon">Evening (4pm - 6pm)</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <label class="form-label" for="pain-level" style="margin-bottom: 0;">Current Discomfort Rating (1 - 10)</label>
-            <span class="pain-badge" id="pain-val-display">5/10</span>
-          </div>
-          <div class="pain-scale-container">
-            <span style="font-size: 0.8rem; color: var(--text-muted);">Mild</span>
-            <input type="range" id="pain-level" class="pain-slider" min="1" max="10" value="5" oninput="updatePainValue(this.value)" />
-            <span style="font-size: 0.8rem; color: var(--text-muted);">Severe</span>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="notes">Briefly describe your symptoms</label>
-          <textarea id="notes" class="form-control" rows="2" placeholder="e.g. Dull ache in lower right back when standing..."></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.95rem;">
-          Confirm Request
-        </button>
-
-        <div class="form-notice" id="form-success-notice">
-          Thank you! Your appointment request has been received. Our team will contact you shortly.
-        </div>
-      </form>
-    </div>
-  </div>
-
+  <!-- Script for Tabs, Mobile Nav, and Form Submission -->
   <script>
-    // Data for interactive spine model
-    const spineData = {
-      cervical: {
-        tag: "Region: C1 - C7",
-        title: "Cervical Spine & Upper Neck",
-        desc: "The cervical vertebrae support the entire weight of your head and enable high degrees of motion. Subtle misalignments here often compress cranial nerves and trigger tension patterns radiating up to the head or down into the shoulders.",
-        symptoms: [
-          "Tension Headaches & Migraines",
-          "Neck Stiffness / 'Tech Neck'",
-          "Tingling in Arms or Fingers",
-          "Jaw (TMJ) Discomfort"
-        ],
-        protocol: "Gentle Blair/Toggle adjustment, cervical decompression & trigger point therapy."
-      },
-      thoracic: {
-        tag: "Region: T1 - T12",
-        title: "Thoracic Spine & Ribcage",
-        desc: "The mid-back directly connects with your ribs and shoulder blades. Slouching over keyboards locks thoracic facets, inhibiting full diaphragm breathing and creating dull, aching knots between the shoulder blades.",
-        symptoms: [
-          "Burning Pain Between Shoulder Blades",
-          "Restricted Deep Inhalation",
-          "Upper Body Fatigue & Hunching",
-          "Rib Joint Pain / Intercostal Irritation"
-        ],
-        protocol: "Posterior-anterior thoracic mobilization, postural extension rolls, myofascial release."
-      },
-      lumbar: {
-        tag: "Region: L1 - L5",
-        title: "Lumbar Spine (Lower Back)",
-        desc: "The largest weight-bearing vertebrae in your body. When lumbar discs degenerate or joints lock out, pressure is transferred directly onto the sciatic nerve root, making sitting, bending, and walking excruciating.",
-        symptoms: [
-          "Shooting Sciatic Leg Pain",
-          "Stiffness When Standing from a Chair",
-          "Lower Lumbar Disc Herniation",
-          "Morning Low Back Spasms"
-        ],
-        protocol: "Cox flexion-distraction decompression, core stabilizer retraining & gentle drops."
-      },
-      sacral: {
-        tag: "Region: Sacrum & Pelvis",
-        title: "Sacroiliac (SI) Joint & Pelvis",
-        desc: "The keystone of your skeletal system. A rotated pelvic bone or sacroiliac joint dysfunction creates an apparent leg length inequality, causing unequal wear and tear on your hips and lower lumbar joints.",
-        symptoms: [
-          "One-Sided Deep Hip or Glute Ache",
-          "Pain When Rolling Over in Bed",
-          "Pregnancy-Related Pelvic Girdle Pain",
-          "Difficulty Standing on One Leg"
-        ],
-        protocol: "Webster Technique analysis, pelvic blocking, and gentle joint realignment."
-      }
-    };
+    // Tab switching functionality
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const treatmentCards = document.querySelectorAll('.treatment-card');
 
-    // Spine segment switcher
-    function selectSpineSegment(regionKey, buttonElem) {
-      document.querySelectorAll('.segment-btn').forEach(btn => btn.classList.remove('active'));
-      buttonElem.classList.add('active');
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Toggle active tab button styling
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
 
-      const data = spineData[regionKey];
-      if (!data) return;
+        const filterValue = button.getAttribute('data-filter');
 
-      document.getElementById('region-tag').innerText = data.tag;
-      document.getElementById('region-title').innerText = data.title;
-      document.getElementById('region-desc').innerText = data.desc;
-      document.getElementById('region-protocol').innerText = data.protocol;
-
-      const symptomList = document.getElementById('region-symptoms');
-      symptomList.innerHTML = '';
-      data.symptoms.forEach(sym => {
-        const span = document.createElement('span');
-        span.className = 'symptom-pill';
-        span.textContent = sym;
-        symptomList.appendChild(span);
-      });
-    }
-
-    // FAQ Accordion Handler
-    function toggleFaq(btnElem) {
-      const item = btnElem.parentElement;
-      const isOpen = item.classList.contains('open');
-
-      // Close all other items for a clean accordion effect
-      document.querySelectorAll('.faq-item').forEach(other => {
-        if (other !== item) other.classList.remove('open');
-      });
-
-      item.classList.toggle('open', !isOpen);
-    }
-
-    // Booking Modal Handlers
-    function openBookingModal(preselectedService = null) {
-      const modal = document.getElementById('booking-modal');
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-
-      if (preselectedService) {
-        const select = document.getElementById('care-type');
-        for (let i = 0; i < select.options.length; i++) {
-          if (select.options[i].text.toLowerCase().includes(preselectedService.toLowerCase()) ||
-              select.options[i].value.toLowerCase().includes(preselectedService.toLowerCase())) {
-            select.selectedIndex = i;
-            break;
+        // Filter cards based on data-category
+        treatmentCards.forEach(card => {
+          if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
           }
-        }
-      }
-    }
+        });
+      });
+    });
 
-    function closeBookingModal() {
-      const modal = document.getElementById('booking-modal');
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-      const notice = document.getElementById('form-success-notice');
-      notice.style.display = 'none';
-    }
+    // Mobile Navigation Toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
 
-    function handleBackdropClick(e) {
-      if (e.target.id === 'booking-modal') {
-        closeBookingModal();
-      }
-    }
+    mobileBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
 
-    function updatePainValue(val) {
-      document.getElementById('pain-val-display').innerText = val + "/10";
-    }
+    // Close mobile nav when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+    });
 
-    function handleAppointmentSubmit(e) {
+    // Form submission with custom modal confirmation
+    const form = document.getElementById('appointmentForm');
+    const modal = document.getElementById('confirmModal');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const modalMsg = document.getElementById('modalMsg');
+
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const notice = document.getElementById('form-success-notice');
-      notice.style.display = 'block';
+      const name = document.getElementById('athleteName').value;
+      const service = document.getElementById('serviceType').value;
 
-      // Reset form fields cleanly after brief moment
-      setTimeout(() => {
-        document.getElementById('appointment-form').reset();
-        updatePainValue(5);
-        setTimeout(() => {
-          closeBookingModal();
-        }, 2200);
-      }, 800);
-    }
+      modalMsg.textContent = `Thank you, ${name}. Your inquiry for "${service}" has been received. Our team will contact you within two hours to confirm availability.`;
+      modal.style.display = 'flex';
+      form.reset();
+    });
 
-    function toggleMobileNav() {
-      const links = document.querySelector('.nav-links');
-      if (links.style.display === 'flex') {
-        links.style.display = 'none';
-      } else {
-        links.style.display = 'flex';
-        links.style.flexDirection = 'column';
-        links.style.position = 'absolute';
-        links.style.top = '80px';
-        links.style.left = '0';
-        links.style.width = '100%';
-        links.style.backgroundColor = '#ffffff';
-        links.style.padding = '1.5rem';
-        links.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-        links.style.gap = '1.2rem';
+    modalCloseBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
       }
-    }
+    });
   </script>
 </body>
 </html>
